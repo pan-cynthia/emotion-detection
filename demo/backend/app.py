@@ -39,8 +39,8 @@ def predict():
   # convert image to grayscale and resize to match model input
   img = Image.open(io.BytesIO(image_bytes)).convert('L').resize((48, 48))
 
-  # normalize values and reshape for model input (1, 48, 48, 1)
-  arr = np.array(img).astype('float32') / 255.0
+  # reshape values for model input (1, 48, 48, 1)
+  arr = np.array(img).astype('float32')
   arr = np.expand_dims(arr, axis=(0, -1))
   
   # run prediction
