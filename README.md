@@ -2,6 +2,16 @@
 
 A real time emotion detection application using React for the frontend and Flask + Tensorflow + OpenCV for the backend. The model detects human faces and classifies emotions into one of seven categories: Angry, Disgust, Fear, Happy, Sad, Surprise, and Neutral.
 
+Access a live demo [here](https://pan-cynthia.github.io/emotion-detection/).
+
+## Note
+
+The backend is hosted on a free Render service that goes to sleep when inactive.
+
+If no data is showing up on the frontend (GitHub pages), please visit the backend once to wake it up: [Backend API](https://emotion-detection-ebqp.onrender.com/)
+
+After ~30 seconds, refresh the frontend and it should display correctly.
+
 ## Prerequisites
 
 [Docker](https://www.docker.com/products/docker-desktop) must be installed to build and run the backend and notebooks.
