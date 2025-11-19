@@ -2,6 +2,10 @@
 
 A real time emotion detection application using React for the frontend and Flask + Tensorflow + OpenCV for the backend. The model detects human faces and classifies emotions into one of seven categories: Angry, Disgust, Fear, Happy, Sad, Surprise, and Neutral.
 
+## Prerequisites
+
+[Docker](https://www.docker.com/products/docker-desktop) must be installed to build and run the backend and notebooks.
+
 ## Demo Application
 
 To install and run the demo locally, follow these steps in your terminal:
@@ -28,13 +32,13 @@ From the `demo` directory:
 docker build -t emotion-backend backend
 ```
 
-Backend will be running at: http://localhost:5000
-
 ### 4. Run the backend container
 
 ```bash
 docker run -p 5000:5000 emotion-backend
 ```
+
+Backend will be running at: http://localhost:5000
 
 ### 5. Run the frontend
 
