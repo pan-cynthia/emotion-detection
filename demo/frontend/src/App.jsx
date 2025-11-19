@@ -7,9 +7,11 @@ function App() {
   const [prediction, setPrediction] = useState(null);
   const [confidence, setConfidence] = useState(null);
 
+  const BACKEND_URL = import.meta.env.VITE_BACKEND_URL || "http://localhost:5000";
+
   const predictEmotion = async () => {
     const image = webcamRef.current.getScreenshot();
-    const response = await fetch("http://localhost:5000/predict", {
+    const response = await fetch(`${BACKEND_URL}/predict`, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ image }),

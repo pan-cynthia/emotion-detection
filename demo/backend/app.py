@@ -1,5 +1,6 @@
 import base64
 import io
+import os
 
 import cv2
 import numpy as np
@@ -9,7 +10,7 @@ from PIL import Image
 from tensorflow.keras.models import load_model
 
 app = Flask(__name__)
-CORS(app)
+CORS(app, resources={r'/*': {'origins': '*'}})
 
 # load pretrained opencv face detector
 face_classifier = cv2.CascadeClassifier(cv2.data.haarcascades + 'haarcascade_frontalface_default.xml')
@@ -99,4 +100,5 @@ def home():
   return '<p>Emotion Detection Backend is Running!</p>'
 
 if __name__=='__main__':
-  app.run(host='0.0.0.0', port=5000)
+  port = int(os.environ.get("PORT", 5000))
+  app.run(host='0.0.0.0', port=port)
